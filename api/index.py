@@ -1,6 +1,7 @@
 import os
 import logging
 from flask import Flask, request, render_template, jsonify, send_from_directory
+from flask import jsonify
 from werkzeug.utils import secure_filename
 from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
@@ -90,6 +91,15 @@ def compress_pdf(input_path, output_path, dpi=300, quality=5, target_reduction=5
 @app.route('/')
 def index():
     return render_template('pdfcompress.html')
+
+@app.route("/")
+def home():
+    return jsonify({"message": "Background Removal API is Running!"})
+
+# Ensure the app runs on Vercel
+def handler(event, context):
+    return app(event, context)
+
 
 @app.route('/compress', methods=['POST'])
 def compress():
