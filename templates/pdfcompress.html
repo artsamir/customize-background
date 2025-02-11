@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Compress - Cut Compress</title>
+    <!-- <link rel="stylesheet" href="pdfcompress-styles.css">  -->
+    <!-- Separate CSS for PDF compression -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pdfcompress-styles.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <!-- <img src="logo.png" alt="Logo"> -->
+                 <h2>CUT COMPRESS</h2>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Resize Photo</a></li>
+                <li><a href="index.html">Customize Background</a></li>
+                <li><a href="#">Image to PDF</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="pdf-compress-container">
+        <h1>PDF Compression</h1>
+        <p>Reduce the size of your PDF files without losing quality.</p>
+
+        <form id="uploadForm">
+            <div class="file-upload-box">
+                <label for="fileInput" class="file-label">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Choose a PDF file</span>
+                </label>
+                <input type="file" id="fileInput" accept=".pdf" class="file-input">
+            </div>
+
+            <div class="compression-settings">
+                <label for="imageQuality">Image Quality:</label>
+                <input type="range" id="imageQuality" min="1" max="10" value="5">
+                <span id="qualityValue">5</span>
+
+                <label for="imageResolution">DPI:</label>
+                <input type="range" id="imageResolution" min="72" max="300" value="150">
+                <span id="dpiValue">150</span>
+
+                <label for="compressionPercentage">Compression Percentage:</label>
+                <input type="range" id="compressionPercentage" min="0" max="100" value="50">
+                <span id="percentageValue">50%</span>
+            </div>
+
+            <button type="submit" id="compressBtn" class="compress-button">
+                <i class="fas fa-compress"></i> Compress PDF
+            </button>
+        </form>
+
+        <div id="progressArea" class="progress-area">
+            <div class="loader"></div>
+            <p>Compressing PDF...</p>
+        </div>
+
+        <div id="resultArea" class="result-area">
+            <p>Original Size: <span id="originalSize">0 Bytes</span></p>
+            <p>Compressed Size: <span id="compressedSize">0 Bytes</span></p>
+            <p>Reduction: <span id="reduction">0%</span></p>
+            <button id="downloadBtn" class="download-button">
+                <i class="fas fa-download"></i> Download Compressed PDF
+            </button>
+        </div>
+
+        <div id="errorArea" class="error-area">
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <!-- <script src="pdfcompress-script.js"></script>  -->
+    <!-- Separate JS for PDF compression -->
+    <script src="{{ url_for('static', filename='js/pdfcompress-script.js') }}"></script>
+
+</body>
+</html>

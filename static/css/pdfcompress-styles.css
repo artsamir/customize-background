@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* General Styles */
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;    
+}
+
+/* Navbar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #4461e0, #209b45); /* Gradient Background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.logo h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 25px;
+    margin-left: 30px;
+    letter-spacing: 2px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 15px 20px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f7f5f1;
+    background-color: rgba(24, 24, 24, 0.1);
+    /* padding: 15px 20px; */
+}
+
+.menu-icon {
+    display: none; /* Hidden on large screens */
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 50px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo h2 {
+        visibility: hidden;
+    }
+
+    .logo h2::before {
+        content: "CUT COMPRESS";
+        visibility: visible;
+        font-size: 2.5rem;
+        font-family: monospace;
+        color: #fff;
+        text-shadow: 2px 2px 4px #2b2323;
+        letter-spacing: 3px;
+        /* position: absolute; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */                     
+    }    
+
+    .nav-links {
+        display: none; /* Hide nav links */
+        flex-direction: column;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 600px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links li {
+        padding: 40px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.3rem;
+    }
+
+    .menu-icon {
+        display: block; /* Show hamburger menu */
+        font-size: 2.1rem;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 35px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo h2 {
+        visibility: hidden;
+    }
+
+    .logo h2::before {
+        content: "CUT COMPRESS";
+        visibility: visible;
+        font-size: 1.5rem;
+        font-family: monospace;
+        color: #fff;
+        text-shadow: 2px 2px 4px #2b2323;
+        letter-spacing: 3px;
+        /* position: absolute; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */                     
+    }    
+
+    .nav-links {
+        display: none; /* Hide nav links */
+        flex-direction: column;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 300px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links li {
+        padding: 20px 0;
+    }
+
+    .menu-icon {
+        display: block; /* Show hamburger menu */
+    }
+}
+
+
+@media (max-width: 412px) {
+    .navbar {
+        padding: 35px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo h2 {
+        visibility: hidden;
+    }
+
+    .logo h2::before {
+        content: "CUT COMPRESS";
+        visibility: visible;
+        font-size: 1.5rem;
+        font-family: monospace;
+        color: #fff;
+        text-shadow: 2px 2px 4px #2b2323;
+        letter-spacing: 3px;
+        /* position: absolute; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */                     
+    }    
+
+    .nav-links {
+        display: none; /* Hide nav links */
+        flex-direction: column;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 300px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links li {
+        padding: 20px 0;
+    }
+
+    .menu-icon {
+        display: block; /* Show hamburger menu */
+    }
+}
+
+/* PDF Compress Container */
+.pdf-compress-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.pdf-compress-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.pdf-compress-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* File Upload Box */
+.file-upload-box {
+    border: 2px dashed #3498db;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.file-label i {
+    font-size: 3rem;
+    color: #3498db;
+}
+
+.file-label span {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+/* Compression Settings */
+.compression-settings {
+    margin-bottom: 20px;
+}
+
+.compression-settings label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.compression-settings input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.compression-settings span {
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+.compress-button, .download-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.compress-button:hover, .download-button:hover {
+    background-color: #2980b9;
+}
+
+/* Progress Area */
+.progress-area {
+    display: none;
+    margin-top: 20px;
+}
+
+.progress-area .loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Result Area */
+.result-area {
+    display: none;
+    margin-top: 20px;
+}
+
+.result-area p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Error Area */
+.error-area {
+    display: none;
+    color: red;
+    margin-top: 20px;
+}
