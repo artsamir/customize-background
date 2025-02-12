@@ -92,6 +92,8 @@ def compress_pdf(input_path, output_path, dpi=300, quality=5, target_reduction=5
 def index():
     return render_template('pdfcompress.html')
 
+
+
 @app.route("/")
 def home():
     return jsonify({"message": "Background Removal API is Running!"})
