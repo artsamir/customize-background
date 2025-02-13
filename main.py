@@ -90,7 +90,18 @@ def compress_pdf(input_path, output_path, dpi=300, quality=5, target_reduction=5
 
 @app.route('/')
 def index():
+    return render_template('removebackground.html')
+
+@app.route('/removebackground')
+def removebackground():
+    return render_template('removebackground.html')
+
+@app.route('/pdfcompress')
+def pdfcompress():
     return render_template('pdfcompress.html')
+
+# def index():
+#     return render_template('pdfcompress.html')
 
 
 

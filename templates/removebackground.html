@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut Compress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">            
+            <a href="{{ url_for('removebackground') }}" class="logo" style="text-decoration: none; color: inherit;">
+                 <h2>CUT COMPRESS</h2>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Resize Photo</a></li>
+                <li><a href="{{ url_for('pdfcompress') }}">PDF Compression</a></li>
+                <li><a href="#">Image to PDF</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="text-previewBox">
+        <h1 class="cb">Customize Background</h1>
+        <h2>Your Image, Your Way - No Background Limits</h2>
+        <div id="container">
+            <div class="preview-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="upload Icon" class="upload-image-icon">
+                <h1 class="upload-icon">Pick a Photo</h1>
+                <input type="file" accept="image/*" class="file-uploader" />
+                <div id="processingAnimation">
+                    <div class="loader"></div>
+                    Removing Background ...
+                </div>
+            </div>
+            <div id="button-container">
+                <button id="removeButton">
+                    <i class="fas fa-eraser"></i> Background
+                </button>
+                <button id="downloadButton">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <label for="colorPicker">Choose Background Color:</label>
+                <input type="color" id="colorPicker" value="#3498db">
+            </div>
+        </div>
+    </div>
+
+    <div id="preview-container">
+        {% for i in range(1, 33) %}
+        <div class="passportViewBox color{{ i }}"></div>
+        {% endfor %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
