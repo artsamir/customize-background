@@ -34,6 +34,14 @@ def allowed_pdf_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_PDF_EXTENSIONS
 
 # Serve sitemap.xml
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('static', 'robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml')
+
 @app.route('/sitemap.xml')
 def serve_sitemap():
     return send_from_directory(STATIC_FOLDER, 'sitemap.xml')
