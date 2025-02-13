@@ -63,6 +63,10 @@ def pdfcompress():
 def photoresizer():
     return render_template('photoresizer.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 # Image Resizing Logic
 def resize_image(image_data, target_size_kb, width, height, dpi):
     try:

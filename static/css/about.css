@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;    
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #4461e0, #209b45); /* Gradient Background */
+    display: flex;
+    align-items: center;
+    justify-content: space-around   ;
+    /* padding: 20px 0px; */
+    padding-top: 20px;
+    padding-bottom: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Logo Styling */
+
+/* temporary hide logo h2 only*/
+.logo h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    margin-left: 30px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #2b2323;
+    font-size: 1.5rem;
+    /* visibility: hidden; */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 15px 20px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f7f5f1;
+    background-color: rgba(24, 24, 24, 0.1);
+    /* padding: 15px 20px; */
+}
+
+.menu-icon {
+    display: none; /* Hidden on large screens */
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* About Section */
+.about-content {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+    color: #222;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-content h3 {
+    color: #007bff;
+    margin-top: 25px;
+}
+
+.about-content p {
+    line-height: 1.6;
+    color: #555;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cta a {
+    display: inline-block;
+    background: #00d4ff;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.cta a:hover {
+    background: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 50px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo h2 {
+        visibility: hidden;
+    }
+
+    .logo h2::before {
+        content: "CUT COMPRESS";
+        visibility: visible;
+        font-size: 2.5rem;
+        font-family: monospace;
+        color: #fff;
+        text-shadow: 2px 2px 4px #2b2323;
+        letter-spacing: 3px;
+        /* position: absolute; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */                     
+    }    
+
+    .nav-links {
+        display: none; /* Hide nav links */
+        flex-direction: column;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 600px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links li {
+        padding: 40px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.3rem;
+    }
+
+    .menu-icon {
+        display: block; /* Show hamburger menu */
+        font-size: 2.1rem;
+    }
+
+    .about-content {
+        margin: 30px;
+        padding: 25px;
+    }
+}

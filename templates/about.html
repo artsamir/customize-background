@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CutCompress - Optimize Images & PDFs Online</title>
+    <meta name="description" content="Learn more about CutCompress, an online tool for background removal, image resizing, and PDF compression. Optimize your files without losing quality!">
+    <meta name="keywords" content="background remover, PDF compressor, image resizer, cutcompress, file optimization">
+    <meta name="author" content="CutCompress">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">            
+            <a href="{{ url_for('removebackground') }}" class="logo" style="text-decoration: none; color: inherit;">
+                 <h2>CUT COMPRESS</h2>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('photoresizer') }}">Resize Photo</a></li>
+                <li><a href="{{ url_for('pdfcompress') }}">PDF Compression</a></li>
+                <li><a href="{{ url_for('removebackground') }}">PDF Compression</a></li>
+                <li><a href="#">Image to PDF</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="about-content">
+        <h2>What is CutCompress?</h2>
+        <p>
+            CutCompress is a free and easy-to-use online tool that helps you 
+            <strong>remove backgrounds from images, compress PDFs, resize images,</strong> 
+            and optimize file sizes without losing quality. Whether you're a designer, 
+            student, business owner, or casual user, CutCompress makes file optimization 
+            quick and hassle-free.
+        </p>
+
+        <h2>Our Features</h2>
+
+        <h3>🎨 Background Remover</h3>
+        <p>
+            Need to remove an image’s background? Our <strong>AI-powered background remover</strong> 
+            helps you erase backgrounds instantly, making it easy to create transparent PNGs 
+            or add custom backgrounds.
+        </p>
+
+        <h3>📄 PDF Compressor</h3>
+        <p>
+            Large PDF files can slow down email attachments and website uploads. 
+            Our <strong>PDF compression tool</strong> reduces file size while keeping the text 
+            and images clear. Perfect for professionals and students!
+        </p>
+
+        <h3>🖼️ Image Resizer</h3>
+        <p>
+            Resize your images online without losing quality. Whether you need to 
+            <strong>resize images for social media, websites, or documents</strong>, 
+            our image resizer ensures your photos fit perfectly.
+        </p>
+
+        <h2>🚀 Why Choose CutCompress?</h2>
+        <ul>
+            <li>✅ <strong>Fast & Free</strong> – No need to install software. Get results instantly!</li>
+            <li>✅ <strong>High-Quality Compression</strong> – Reduce file size while keeping excellent resolution.</li>
+            <li>✅ <strong>Secure & Private</strong> – Your files are processed securely and deleted automatically.</li>
+            <li>✅ <strong>No Watermarks</strong> – Unlike other free tools, we don’t add watermarks to your images.</li>
+        </ul>
+
+        <h2>How to Use CutCompress?</h2>
+        <ol>
+            <li><strong>Upload Your File</strong> – Select an image or PDF from your device.</li>
+            <li><strong>Choose an Action</strong> – Resize, remove background, or compress.</li>
+            <li><strong>Download Your Optimized File</strong> – Get your file in seconds.</li>
+        </ol>
+
+        <p class="cta">
+            Start optimizing your images and PDFs today! 🚀 
+            <a href="https://cutcompress.com">Visit CutCompress.com now</a>.
+        </p>
+    </section>
+
+</body>
+</html>
