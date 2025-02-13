@@ -21,7 +21,7 @@ ALLOWED_PDF_EXTENSIONS = {'pdf'}
 # Ensure upload folder exists
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 5MB limit
+app.config['MAX_CONTENT_LENGTH'] = 30 * 1024 * 1024  # 5MB limit
 
 # Helper functions
 def allowed_image_file(filename):

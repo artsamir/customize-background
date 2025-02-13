@@ -18,7 +18,7 @@ body {
     background: linear-gradient(45deg, #4461e0, #209b45); /* Gradient Background */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     /* padding: 20px 0px; */
     padding-top: 20px;
     padding-bottom: 15px;
@@ -188,6 +188,7 @@ body {
     }
     
 }
+
 
 @media (max-width: 480px) {
     .navbar {
