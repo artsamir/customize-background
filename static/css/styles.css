@@ -21,26 +21,61 @@ body {
     background: linear-gradient(45deg, #4461e0, #209b45); /* Gradient Background */
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 30px 0px;
+    justify-content: space-between;
+    /* padding: 30px 0px; */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
 /* Logo Styling */
-.logo h2 {
+/* .logo h2 {
     position: absolute;
     top: 0;
     left: 0;
     margin-top: 25px;
     margin-left: 30px;
+} */
+ .logo {
+    width: 200px;
+    margin-left: 20px;
+ }
+.logo img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 5px;
+    
+    /* Adding a subtle background to enhance visibility */
+    background-color: rgba(250, 233, 233, 0.9); /* Light gray transparent background */
+    
+    /* 3D Shadow Effect */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), 
+                inset 2px 2px 5px rgba(255, 255, 255, 0.5);
+    
+    /* Slight 3D tilt */
+    transform: perspective(100px) rotateX(5deg) rotateY(5deg);
+    
+    /* Smooth transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Add hover effect for a lifting effect */
+.logo img:hover {
+    transform: perspective(100px) rotateX(0deg) rotateY(0deg) translateY(-3px);
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.4), 
+                inset 2px 2px 5px rgba(255, 255, 255, 0.6);
+}
+
+
 
 /* Navigation Links */
 .nav-links {
+    width: 100%;
     list-style: none;
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 .nav-links li {
@@ -50,6 +85,7 @@ body {
 .nav-links a {
     text-decoration: none;
     padding: 15px 20px;
+    margin: 3px 0;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
@@ -275,7 +311,8 @@ button#removeButton {
         flex-direction: column;
         gap: 10px;
     }
-    
+
+        
     .logo h2 {
         visibility: hidden;
     }
@@ -292,7 +329,9 @@ button#removeButton {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); */                     
-    }    
+    }   
+    
+    
 
     .nav-links {
         display: none; /* Hide nav links */

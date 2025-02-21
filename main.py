@@ -63,6 +63,10 @@ def pdfcompress():
 def photoresizer():
     return render_template('photoresizer.html')
 
+@app.route('/photoeditor')
+def photoeditor():
+    return render_template('photoeditor.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')
