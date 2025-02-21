@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CutCompress - Free Background Remover, Image Resizer & PDF Compressor</title>
+    <meta name="description" content="Remove image backgrounds, compress PDFs, and resize photos online for free. CutCompress offers fast and efficient tools for your needs.">
+    <meta name="keywords" content="background remover, PDF compressor, image resizer, free online tools, remove background">
+    <meta name="author" content="CutCompress">
+    
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/photoeditor-styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">            
+            <a href="{{ url_for('removebackground') }}" class="logo" style="text-decoration: none; color: inherit;">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('photoresizer') }}">Resize Photo</a></li>
+                <li><a href="{{ url_for('pdfcompress') }}">PDF Compression</a></li>
+                <li><a href="{{ url_for('removebackground') }}">Background Remover</a></li>
+                <li><a href="#">Image to PDF</a></li>
+                <li><a href="{{ url_for('photoeditor') }}">Photo Editor</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <div class="editor-container">
+        <h1>CutCompress Editor</h1>
+        <input type="file" id="uploadImage" accept="image/*">
+        <canvas id="canvas"></canvas>
+        <div class="controls">
+            <label>Brightness</label>
+            <input type="range" id="brightness" min="-100" max="100" value="0">
+            <label>Contrast</label>
+            <input type="range" id="contrast" min="-100" max="100" value="0">
+            <label>Saturation</label>
+            <input type="range" id="saturation" min="-100" max="100" value="0">
+            <button onclick="applyFilter('grayscale')">Grayscale</button>
+            <button onclick="applyFilter('sepia')">Sepia</button>
+            <button onclick="applyFilter('invert')">Invert</button>
+            <button onclick="addText()">Add Text</button>
+            <button onclick="enableDrawing()">Draw</button>
+            <button onclick="saveImage()">Download</button>
+        </div>
+    </div>    
+
+    <script src="{{ url_for('static', filename='js/photoeditor-script.js') }}"></script>
+</body>
+</html>
