@@ -1,15 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+
 /* Google Font */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;    
-    background: #f4f4f4;
-    color: #333;
+    font-family: sans-serif;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 20px; */
+    background-color: #ecebf7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23B7BBBE' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23B0B0BE'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Navbar Styles */
@@ -20,35 +26,59 @@ body {
     background: linear-gradient(45deg, #4461e0, #209b45); /* Gradient Background */
     display: flex;
     align-items: center;
-    justify-content: space-around   ;
-    /* padding: 20px 0px; */
-    padding-top: 20px;
-    padding-bottom: 15px;
+    justify-content: space-between;
+    /* padding: 30px 0px; */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
 /* Logo Styling */
-
-/* temporary hide logo h2 only*/
-.logo h2 {
+/* .logo h2 {
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: 30px;
-    letter-spacing: 2px;
-    color: #fff;
-    text-shadow: 2px 2px 4px #2b2323;
-    font-size: 1.5rem;
-    /* visibility: hidden; */
+} */
+.logo {
+    width: 230px;
+    margin-left: 20px;
+ }
+.logo img {
+    width: 210px;
+    height: 50px;
+    /* padding: 1px; */
+    margin: 3px;
+    border-radius: 5px;
+        
+    /* Adding a subtle background to enhance visibility */
+    /*background-color: rgba(250, 233, 233, 0.9); /* Light gray transparent background */
+    
+    /* 3D Shadow Effect */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3), 
+                inset 1px 1px 3px rgba(255, 255, 255, 0.7);
+    
+    /* Slight 3D tilt */
+    /*transform: perspective(100px) rotateX(5deg) rotateY(5deg);
+    
+    /* Smooth transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effect for a lifting effect */
+.logo img:hover {
+    transform: perspective(100px) rotateX(0deg) rotateY(0deg) translateY(-3px);
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.4), 
+                inset 2px 2px 5px rgba(255, 255, 255, 0.6);
 }
 
 /* Navigation Links */
 .nav-links {
+    width: 100%;
     list-style: none;
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 .nav-links li {
@@ -58,6 +88,7 @@ body {
 .nav-links a {
     text-decoration: none;
     padding: 15px 20px;
+    margin: 3px 0;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;

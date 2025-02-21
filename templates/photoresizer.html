@@ -29,12 +29,12 @@
 <body>
 
     <header>
-        <nav class="navbar">            
+        <nav class="navbar" style="padding-top: 2px; padding-bottom: 2px;">            
             <a href="{{ url_for('removebackground') }}" class="logo" style="text-decoration: none; color: inherit;">
                 <!-- <h2>CUT COMPRESS</h2> -->
-                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+                 <img src="{{ url_for('static', filename='images/logo-len1-trans.png') }}" alt="logo">
            </a>
-            <ul class="nav-links">
+            <ul class="nav-links" style="margin-bottom: 0;">
                 <li><a href="{{ url_for('photoresizer') }}">Resize Photo</a></li>
                 <li><a href="{{ url_for('pdfcompress') }}">PDF Compression</a></li>
                 <li><a href="{{ url_for('removebackground') }}">Customize Background</a></li>

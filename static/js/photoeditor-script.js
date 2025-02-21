@@ -1,3 +1,18 @@
+function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    const menuIcon = document.querySelector(".menu-icon i");
+
+    navLinks.classList.toggle("active");
+
+    if (navLinks.classList.contains("active")) {
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-times");
+    } else {
+        menuIcon.classList.remove("fa-times");
+        menuIcon.classList.add("fa-bars");
+    }
+}
+
 document.getElementById('uploadImage').addEventListener('change', function (event) {
     let file = event.target.files[0];
     if (!file) return;
@@ -9,11 +24,9 @@ document.getElementById('uploadImage').addEventListener('change', function (even
             let canvas = document.getElementById('canvas');
             let ctx = canvas.getContext('2d');
 
-            // Resize canvas to match image
             canvas.width = img.width;
             canvas.height = img.height;
 
-            // Draw image on canvas
             ctx.drawImage(img, 0, 0, img.width, img.height);
         };
         img.src = e.target.result;
@@ -49,21 +62,37 @@ function applyFilter(filter) {
     ctx.putImageData(imageData, 0, 0);
 }
 
-// Brightness, Contrast & Saturation Controls
 document.getElementById('brightness').addEventListener('input', updateFilters);
 document.getElementById('contrast').addEventListener('input', updateFilters);
 document.getElementById('saturation').addEventListener('input', updateFilters);
+document.getElementById('temperature').addEventListener('input', updateFilters);
+document.getElementById('tint').addEventListener('input', updateFilters);
+document.getElementById('highlights').addEventListener('input', updateFilters);
+document.getElementById('shadows').addEventListener('input', updateFilters);
+document.getElementById('whites').addEventListener('input', updateFilters);
+document.getElementById('blacks').addEventListener('input', updateFilters);
+document.getElementById('vibrance').addEventListener('input', updateFilters);
 
 function updateFilters() {
     let brightness = parseInt(document.getElementById('brightness').value);
     let contrast = parseInt(document.getElementById('contrast').value);
     let saturation = parseInt(document.getElementById('saturation').value);
+    let temperature = parseInt(document.getElementById('temperature').value);
+    let tint = parseInt(document.getElementById('tint').value);
+    let highlights = parseInt(document.getElementById('highlights').value);
+    let shadows = parseInt(document.getElementById('shadows').value);
+    let whites = parseInt(document.getElementById('whites').value);
+    let blacks = parseInt(document.getElementById('blacks').value);
+    let vibrance = parseInt(document.getElementById('vibrance').value);
 
-    let filterString = `brightness(${brightness + 100}%) contrast(${contrast + 100}%) saturate(${saturation + 100}%)`;
+    let filterString = `brightness(${brightness + 100}%) contrast(${contrast + 100}%) saturate(${saturation + 100}%) 
+                        hue-rotate(${temperature}deg) sepia(${tint}%) 
+                        brightness(${highlights + 100}%) contrast(${shadows + 100}%) 
+                        brightness(${whites + 100}%) contrast(${blacks + 100}%) 
+                        saturate(${vibrance + 100}%)`;
     canvas.style.filter = filterString;
 }
 
-// Add Text Function
 function addText() {
     let text = prompt("Enter text:");
     if (text) {
@@ -73,19 +102,51 @@ function addText() {
     }
 }
 
-// Enable Drawing
+let drawing = false;
+let erasing = false;
+
 function enableDrawing() {
-    let drawing = false;
+    drawing = true;
+    erasing = false;
     canvas.onmousedown = () => drawing = true;
     canvas.onmouseup = () => drawing = false;
     canvas.onmousemove = function (e) {
         if (!drawing) return;
-        ctx.fillStyle = "black";
-        ctx.fillRect(e.offsetX, e.offsetY, 5, 5);
+        ctx.fillStyle = document.getElementById('penColor').value;
+        ctx.fillRect(e.offsetX, e.offsetY, document.getElementById('penSize').value, document.getElementById('penSize').value);
     };
 }
 
-// Save Edited Image
+function enableEraser() {
+    erasing = true;
+    drawing = false;
+    canvas.onmousedown = () => erasing = true;
+    canvas.onmouseup = () => erasing = false;
+    canvas.onmousemove = function (e) {
+        if (!erasing) return;
+        ctx.clearRect(e.offsetX, e.offsetY, document.getElementById('penSize').value, document.getElementById('penSize').value);
+    };
+}
+
+function addShape(shape) {
+    let fillColor = document.getElementById('shapeFillColor').value;
+    let borderColor = document.getElementById('shapeBorderColor').value;
+
+    if (shape === 'rectangle') {
+        ctx.fillStyle = fillColor;
+        ctx.strokeStyle = borderColor;
+        ctx.fillRect(50, 50, 100, 100);
+        ctx.strokeRect(50, 50, 100, 100);
+    } else if (shape === 'circle') {
+        ctx.fillStyle = fillColor;
+        ctx.strokeStyle = borderColor;
+        ctx.beginPath();
+        ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.stroke();
+    }
+}
+
 function saveImage() {
     let link = document.createElement('a');
     link.download = 'edited-image.png';

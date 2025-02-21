@@ -17,8 +17,8 @@
     <header>
         <nav class="navbar">
             <a href="{{ url_for('removebackground') }}" class="logo" style="text-decoration: none; color: inherit;">
-                <!-- <img src="logo.png" alt="Logo"> -->
-                 <h2>CUT COMPRESS</h2>
+                 <!-- <h2>CUT COMPRESS</h2> -->
+                 <img src="{{ url_for('static', filename='images/logo-len1-trans.png') }}" alt="logo">
             </a>
             <ul class="nav-links">
                 <li><a href="{{ url_for('photoresizer') }}">Resize Photo</a></li>

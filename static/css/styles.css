@@ -36,25 +36,25 @@ body {
     margin-left: 30px;
 } */
  .logo {
-    width: 200px;
+    width: 230px;
     margin-left: 20px;
  }
 .logo img {
-    width: 50px;
+    width: 210px;
     height: 50px;
-    padding: 5px;
+    /* padding: 1px; */
     margin: 3px;
     border-radius: 5px;
-    
+
     /* Adding a subtle background to enhance visibility */
-    background-color: rgba(250, 233, 233, 0.9); /* Light gray transparent background */
+    /*background-color: rgba(250, 233, 233, 0.9); /* Light gray transparent background */
     
     /* 3D Shadow Effect */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), 
-                inset 2px 2px 5px rgba(255, 255, 255, 0.5);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3), 
+                inset 1px 1px 3px rgba(255, 255, 255, 0.7);
     
     /* Slight 3D tilt */
-    transform: perspective(100px) rotateX(5deg) rotateY(5deg);
+    /*transform: perspective(100px) rotateX(5deg) rotateY(5deg);
     
     /* Smooth transition */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
