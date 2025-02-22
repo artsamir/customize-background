@@ -29,17 +29,44 @@
 <body>
 
     <header>
-        <nav class="navbar" style="padding-top: 2px; padding-bottom: 2px;">            
+        <nav class="navbar">
             <a href="{{ url_for('removebackground') }}" class="logo" style="text-decoration: none; color: inherit;">
-                <!-- <h2>CUT COMPRESS</h2> -->
-                 <img src="{{ url_for('static', filename='images/logo-len1-trans.png') }}" alt="logo">
-           </a>
-            <ul class="nav-links" style="margin-bottom: 0;">
-                <li><a href="{{ url_for('photoresizer') }}">Resize Photo</a></li>
-                <li><a href="{{ url_for('pdfcompress') }}">PDF Compression</a></li>
-                <li><a href="{{ url_for('removebackground') }}">Customize Background</a></li>
-                <li><a href="#">Image to PDF</a></li>
-                <li><a href="{{ url_for('photoeditor') }}">Photo Editor</a></li>
+                <img src="{{ url_for('static', filename='images/logo-len1-trans.png') }}" alt="logo">
+            </a>
+            <ul class="nav-links">
+                <li class="has-submenu">
+                    <a href="#">Image Studio</a>
+                    <ul class="submenu">
+                        <li><a href="{{ url_for('photoresizer') }}">Resize Photo</a></li>
+                        <li><a href="{{ url_for('photoeditor') }}">Photo Editor</a></li>
+                        <li><a href="#">Combine Images</a></li>
+                        <li><a href="#">Passport PrintReady</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('removebackground') }}">Background Remover</a></li>
+                <li class="has-submenu">
+                    <a href="#">Convert Images</a>
+                    <ul class="submenu">
+                        <li><a href="{{ url_for('webp_png_converter') }}">WebP to PNG/JPG</a></li>
+                        <li><a href="#">JPG to WebP</a></li>
+                        <li><a href="#">PNG to WebP</a></li>
+                        <li><a href="#">PNG to JPG/JPEG</a></li>
+                        <li><a href="#">Image to TIFF</a></li>
+                        <li><a href="#">Image to PDF</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">PDF Studio</a>
+                    <ul class="submenu">
+                        <li><a href="{{ url_for('pdfcompress') }}">PDF Compression</a></li>
+                        <li><a href="#">Merge PDF</a></li>
+                        <li><a href="#">Split PDF</a></li>
+                        <li><a href="#">Remove Pages</a></li>
+                        <li><a href="#">Word to PDF</a></li>
+                        <li><a href="#">Picture to PDF</a></li>
+                        <li><a href="#">PowerPoint to PDF</a></li>
+                    </ul>
+                </li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
             </ul>
             <div class="menu-icon" onclick="toggleMenu()">
