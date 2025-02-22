@@ -67,6 +67,10 @@ def photoresizer():
 def photoeditor():
     return render_template('photoeditor.html')
 
+@app.route('/webp-png-converter')
+def webp_png_converter():
+    return render_template('webp-png-converter.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')

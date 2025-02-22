@@ -3,25 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CutCompress - Free Background Remover, Image Resizer & PDF Compressor</title>
-    <meta name="description" content="Remove image backgrounds, compress PDFs, and resize photos online for free. CutCompress offers fast and efficient tools for your needs.">
-    <meta name="keywords" content="background remover, PDF compressor, image resizer, free online tools, remove background">
-    <meta name="author" content="CutCompress">
-    
-    <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="Resize Images Online - CutCompress">
-    <meta property="og:description" content="Easily resize images without losing quality. Free online image resizer.">
-    <meta property="og:image" content="https://cutcompress.com/static/images/removebackground.jpg">
-    <meta property="og:url" content="https://cutcompress.com/removebackground">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Online Image Resizer - CutCompress">
-    <meta name="twitter:description" content="Resize images for web & social media in seconds. Free tool!">
-    <meta name="twitter:image" content="https://cutcompress.com/static/images/removebackground.jpg">
+    <title>WebP Converter</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/webp-png-converter.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
 </head>
 <body>
     <header>
@@ -71,38 +57,33 @@
         </nav>
     </header>
 
-    <div class="text-previewBox">
-        <h1 class="cb">Customize Background</h1>
-        <h2>Your Image, Your Way - No Background Limits</h2>
-        <div id="container">
-            <div class="preview-box">
-                <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="upload Icon" class="upload-image-icon">
-                <h1 class="upload-icon">Pick a Photo</h1>
-                <input type="file" accept="image/*" class="file-uploader" />
-                <div id="processingAnimation">
-                    <div class="loader"></div>
-                    Removing Background ...
-                </div>
+    <div class="container">
+        <h1>WebP to PNG/JPG Converter</h1>
+        <div id="drop-area">
+            <p>Drag & Drop a WebP file here or click to select</p>
+            <input type="file" id="file-input" accept="image/webp">
+        </div>
+        <p id="filename-display"></p>
+
+        <div class="preview-container">
+            <div class="preview-box" id="upload-preview-box">
+                <img id="upload-preview" style="display: none;">
             </div>
-            <div id="button-container">
-                <button id="removeButton">
-                    <i class="fas fa-eraser"></i> Background
-                </button>
-                <button id="downloadButton">
-                    <i class="fas fa-download"></i> Download
-                </button>
-                <label for="colorPicker">Choose Background Color:</label>
-                <input type="color" id="colorPicker" value="#3498db">
+            <div class="preview-box" id="converted-preview-box">
+                <img id="converted-preview" style="display: none;">
             </div>
         </div>
+        <p id="conversion-type-display" style="display: none;"></p>
+
+        <div id="conversion-options">
+            <label><input type="radio" name="format" value="png" checked> PNG</label>
+            <label><input type="radio" name="format" value="jpeg"> JPG</label>
+        </div>
+
+        <button id="convert-button">Convert</button>
+        <a id="download-link" href="#" download="converted_image.png">Download Converted Image</a>
     </div>
 
-    <div id="preview-container">
-        {% for i in range(1, 33) %}
-        <div class="passportViewBox color{{ i }}"></div>
-        {% endfor %}
-    </div>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/webp-png-converter.js') }}"></script>
 </body>
 </html>
